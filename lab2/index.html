@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to pass laboratory II?">
+    <meta name="keywords" content="HTML5, Lists, Tables, Forms">
+    <meta name="author" content="Filip Strózik">
+    <meta name="revised" content="16/10/2022">
+    
+    <title>Jak zaliczyć Laboratorium 2?</title>
+</head>
+<body>
+    <header>
+        <article>
+            <h3>Nawigacja:</h3>
+        </article>
+        <nav>
+            <ul>
+                <li><a href="#poczatek">początek</a></li>
+                <li><a href="#lista_ordered">lista ordered</a></li>
+                <li><a href="#lista_unordered">lista unordered</a></li>
+                <li><a href="#lista_definicji">lista definicji</a></li>
+                <li><a href="#listy_zagniezdzone">listy zagnieżdżone</a></li>
+                <li><a href="#tablica">tablica</a></li>
+                <li><a href="#formularz">formularz</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam praesentium modi cum quod voluptas expedita voluptatum esse molestias optio officiis! Eum explicabo nam quidem minus impedit consectetur quos cupiditate! Tenetur?</p>
+
+
+    <section id="poczatek">
+        <h1>
+            <strong>&lt;HTML5&gt;</strong><em> by </em>&copy; <mark>Filip Strózik.</mark>
+        </h1>
+    </section>
+    
+
+    <header>
+        &Cfr;zyli jak używać <ins>list?</ins>
+        <p>
+            <em>&zopf;apamiętaj: 2<sup>10</sup> = 1024</em>
+        </p>
+    </header>
+
+    <h5>jak stworzyć własną stronę HTML?</h5>
+    <ol id="lista_ordered">
+        <li>włącz komputer</li>
+        <li>uruchom Visual Studio Code</li>
+        <li>utwórz nowy plik "index.html"</li>
+        <li>najedź cursorem na edytor</li>
+        <li>wpisz "!"</li>
+        <li>wciśnij "Enter"</li>
+    </ol>
+
+    <h5>Co potrzebujesz?</h5>
+    <ul id="lista_unordered">
+        <li>Komputer</li>
+        <li>Visual Studio Code</li>
+        <li>Mysz</li>
+        <li>Klawiaturę</li>
+    </ul>
+
+    <h5>Terminy, które warto znać.</h5>
+    <dl id="lista_definicji">
+        <dt>DOM</dt>
+        <dd>Obiektowy model dokumentu (ang. Document Object Model, DOM) – sposób reprezentacji złożonych dokumentów XML i HTML w postaci modelu obiektowego. 
+            Model ten jest niezależny od platformy i języka programowania.</dd>
+        <dt>JSON</dt>
+        <dd>JavaScript Object Notation, JSON – lekki format wymiany danych komputerowych. JSON jest formatem tekstowym, bazującym na podzbiorze języka JavaScript. 
+            Typ MIME dla formatu JSON to application/json. Format został opisany w dokumentach RFC 4627, ISO/IEC 21778:2017 oraz ECMA-404.</dd>
+        <dt>Kod odpowiedzi HTTP</dt>
+        <dd>od odpowiedzi HTTP – numeryczna dana wysyłana przez serwer HTTP do aplikacji klienta. Informuje o sposobie realizacji (bądź jej braku) zapytania klienckiego.
+             Znajduje się na początku odpowiedzi, tuż za wersją protokołu HTTP i przed słownym opisem kodu odpowiedzi</dd>
+    </dl>
+
+    <h5>Listy zagnieżdżone</h5>
+    <ol id="listy_zagniezdzone">
+        <li>list element of I level</li>
+        <li>
+            <ol>
+                <li>First of II level</li>
+                <li>Second of II level</li>
+                <li>Third of II level</li>
+            </ol>
+        </li>
+        <li>list element of I level
+                <ol>
+                    <li>
+                        First of II level
+                        <ul>
+                            <li>ONE of III level</li>
+                            <li>TWO of III level</li>
+                            <li>THREE of III level</li>
+                            <li>FOUR of III level</li>
+                        </ul>
+                    </li>
+                    <li>Second of II level</li>
+                    <li>Third of II level</li>
+                </ol>
+
+        </li>
+        <li>list element of I level
+            <ol>
+                <li>First of II level
+                    <ul>
+                        <li>ONE of III level</li>
+                        <li>TWO of III level
+                            <dl>
+                                <dt>FIRST</dt>
+                                <dd>of 4'th level</dd>
+                                <dt>SECOND</dt>
+                                <dd>of 4'th level</dd>
+                                <dt>THIRD</dt>
+                                <dd>of 4'th level</dd>
+                                <dt>FOURTH</dt>
+                                <dd>of 4'th level</dd>
+                            </dl>
+                        </li>
+                        <li>THREE of III level</li>
+                        <li>FOUR of III level</li>
+                    </ul>
+                </li>
+                <li>Second of II level</li>
+                <li>Third of II level</li>
+            </ol>
+        </li>
+        <li>list element of I level</li>
+    </ol>
+        
+    <table id="tablica" border="1px">
+        <thead>
+          <tr>
+            <th colspan="8">Wejsciówka</th>
+          </tr>
+          <tr>
+            <th colspan="4">wypelnia student A</th>
+            <th colspan="4">wypelnia student B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="2" colspan="2">dane</th>
+            <th>iloczyn</th>
+            <th>iloraz</th>
+            <th rowspan="2">suma</th>
+            <th colspan="3">rożnica z:</th>
+          </tr>
+          <tr>
+            <td>* 2.0</td>
+            <td>/ 3.0</td>
+            <td>x</td>
+            <td>y</td>
+            <td>z</td>
+          </tr>
+          <tr>
+            <td>x</td>
+            <td>1.0</td>
+            <td>2.0</td>
+            <td>0.33(3)</td>
+            <td rowspan="3">3.7</td>
+            <td>0</td>
+            <td>-2.5</td>
+            <td>2.2</td>
+          </tr>
+          <tr>
+            <td>y</td>
+            <td>3.5</td>
+            <td>7.0</td>
+            <td>1.17</td>
+            <td>2.5</td>
+            <td>0</td>
+            <td>4.7</td>
+          </tr>
+          <tr>
+            <td>z</td>
+            <td>-1.2</td>
+            <td>-2.4</td>
+            <td>-0.4</td>
+            <td>-2.2</td>
+            <td>-4.7</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2" >Ocena</th>
+                <td colspan="2">..................</td>
+                <th colspan="1" >Ocena</th>
+                <td colspan="3">..................</td>
+            </tr>
+            <tr>
+                <th colspan="8" >Podpis Prowadzącego:</th>
+            </tr>
+            <tr>
+                <th colspan="8" >........................................</th>
+            </tr>
+            </tfoot>
+        </table>
+
+        
+
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th colspan="3">&lt;TABLE&gt;</th>
+                    <th>B</th>
+                </tr>
+  
+            </thead>
+            <tbody>
+                <tr>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td colspan="2" rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Smiley.svg" alt="Smiley" width="30"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" rowspan="2">@</td>
+                    <td>F</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>J</td>
+                    <td>K</td>
+                    <td colspan="3"><a href="https://www.google.pl/">link</a></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>Formularz wystawiania opinii</h3>
+        <form id="formularz" action="http://192.168.0.80:5500/index.html" method="post">
+            <!-- 1 -->
+            <input type="hidden" name="securityCode" value="2137">
+            <!-- 2 -->
+            <p>
+                <label for="idName">Imię: </label>
+                <input type="text" name="Name" id="idName">
+            </p>
+            <!-- 3 -->
+            <p>
+                <label for="Telefon">Telefon:</label>
+                <input type="tel" name="Telefon" id="Telefon">
+            </p>
+            <!-- 4 -->
+            <p>
+                <label for="idEmail">E-mail: </label>
+                <input type="email" name="E-mail" id="idEmail"> 
+            </p>
+            <!-- 5 -->
+            <p>
+                <label for="idKolor">Ulubiony kolor:</label>
+                <input id="idKolor" name="Color" type="color" value="#3D60C7">
+            </p>
+            <!-- 6 -->
+            <p>
+                <label>Płec:</label>
+                <label><input name="gender" type="radio" value="M">Mężczyzna</label>
+                <label><input name="gender" type="radio" value="F">Kobieta</label>
+            </p>
+            <!-- 7 -->
+            <p>
+                <label for="idDateBirth">Data urodzenia:</label>
+                <input id="idDateBirth" name="DateBirth" type="date" value="2021-09-12">
+            </p>
+            <!-- 8 -->
+            <p>
+                <label for="idDateTimeLocalPurchase">Godzina zakupu produktu:</label>
+                <input id="idDateTimeLocalPurchase" name="DateTimeLocalPurchase" type="datetime-local">
+            </p>
+            <!-- 9 -->
+            <p>
+                <textarea name="review" cols="50" rows="5" placeholder="wyraź swoją opinię:"></textarea>
+            </p>
+            
+            <!-- 10 -->
+            <p>
+                <label for="idState">w jakim wojewódzwie mieszkasz?</label>
+                <select id="idState" name="state">
+                    <option>dolnośląskie</option>
+                    <option>kujawsko-pomorskie</option>
+                    <option>lubelskie</option>
+                    <option>lubuskie</option>
+                    <option>łódzkie</option>
+                    <option>małopolskie</option>
+                    <option>mazowieckie</option>
+                    <option>opolskie</option>
+                    <option>podkarpackie</option>
+                    <option>podlaskie</option>
+                    <option>pomorskie</option>
+                    <option>śląskie</option>
+                    <option>świętokrzyskie</option>
+                    <option>warmińsko-mazurskie</option>
+                    <option>wielkopolskie</option>
+                    <option>zachodniopomorskie</option>
+                </select>
+            </p>
+
+            <!-- 11 -->
+            <p>
+                <label for="idAttach">Dodaj załącznik</label>
+                <input type="file" name="attachment" id="idAttach">
+
+            </p>
+    
+            <!-- 12 -->
+
+            <p> 
+                <label for="idNumber">Wpisz numer zamówienia</label>
+                <input type="number" name="number" id="idNumber">
+                
+            </p>
+
+            
+            <p>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+            </p>
+
+        </form>
+        <details>
+            <summary>Niespodzianka</summary>
+            Właściciele kotów żyją dłużej i są zdrowsi - badania udowodniły, że rzadziej (aż o 20 proc.) zapadają na zawał i udar, rzadziej też chorują na infekcje układu oddechowego, szybciej zdrowieją, a kocie mruczenie łagodzi stres i ból.
+            </details>
+
+        <footer>
+            Stopka tej strony.
+        </footer>
+</body>
+</html>
+
+
+<!--
+    Stworzyć stronę HTML5 z podanymi elementami i ich możliwościami :
+        a. 5 znaków specjalnych ok
+        b. 5 rodzajów formatowanie tekstu (typu <strong> itd.) ok
+        c. Listy uporządkowane ok
+        d. Listy nieuporządkowane ok
+        e. Lista definicji ok
+        f. Listy zagnieżdżone (co najmniej 4 poziomy, minimum 2-3 elementy na każdym
+        poziomie, minimum 10 elementów sumarycznie) ok
+        g. Tabele minimum 5x5 z ciekawym wykorzystaniem łączenia komórek, z wierszami nagłówka i stopki ok
+        h. Formularz z wykorzystaniem co najmniej 10 różnymi typami pól (nie licząc submit i reset) ok
+        i. Zastosować linkowanie wewnętrzne (do tabeli, list, formularza, do początku strony).ok Tak dopisać tekst w akapitach, żeby był widoczny efekt takiego linku.? OK
+        j. Zastosować 4 elementy meta nie wygenerowane automatycznie przez VS Code. ok
+        k. Wykorzystać minimum 3 nowe elementy struktury strony (typu <section> itp.) OK
+-->

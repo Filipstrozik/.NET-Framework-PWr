@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tables</title>
+</head>
+<body>
+    <div class="top-gap"></div>
+    <nav class="menu"><a href="index.html">Menu</a>
+        <ul>
+            <li><a href="backgrounds.html">Backgrounds</a></li>
+            <li class="drop-down"> Text Menu
+                <ul class="submenu">
+                    <li><a href="textSize.html">Text size</a></li>
+                    <li><a href="textFormat.html">Text format</a></li>
+                </ul>
+            </li>
+            <li><a href="border.html">Borders</a></li>
+            <li><a href="tables.html">Table style</a></li>
+            <li class="drop-down"> Box-Model Menu
+                <ul class="submenu">
+                    <li class="drop-down"> Positon Menu
+                        <ul class="submenu">
+                            <li><a href="absolute.html">Absolute</a></li>
+                            <li><a href="relative.html">Relative</a></li>
+                            <li><a href="fixed.html">Fixed</a></li>
+                            <li><a href="static.html">Static</a></li>
+                            <li><a href="sticky.html">Sticky</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="drop-down"> Box Menu
+                        <ul class="submenu">
+                            <li><a href="margin.html">Margin</a></li>
+                            <li><a href="padding.html">Padding</a></li>
+                            <li><a href="widthheight.html">Width-Height</a></li>
+                            <li><a href="float.html">Float</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <table id="tableBorder">
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th colspan="3">&lt;TABLE&gt;</th>
+                    <th>B</th>
+                </tr>
+  
+            </thead>
+            <tbody>
+                <tr>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td colspan="2" rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Smiley.svg" alt="Smiley" width="30"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" rowspan="2">@</td>
+                    <td>F</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>J</td>
+                    <td>K</td>
+                    <td colspan="3"><a href="https://www.google.pl/">link</a></td>
+                </tr>
+            </tfoot>
+    </table>
+
+    <table id="tableColor">
+        <thead>
+            <tr>
+                <th>A</th>
+                <th colspan="3">&lt;TABLE&gt;</th>
+                <th>B</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+                <td colspan="2" rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Smiley.svg" alt="Smiley" width="30"></td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">@</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>H</td>
+                <td>I</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>J</td>
+                <td>K</td>
+                <td colspan="3"><a href="https://www.google.pl/">link</a></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table id="tablica">
+        <thead>
+          <tr>
+            <th colspan="8">Wejsciówka</th>
+          </tr>
+          <tr>
+            <th colspan="4" class="studA">wypelnia student A</th>
+            <th colspan="4" class="studB">wypelnia student B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="2" colspan="2"  class="studA">dane</th>
+            <th class="studA">iloczyn</th>
+            <th class="studA">iloraz</th>
+            <th rowspan="2" class="studB">suma</th>
+            <th colspan="3" class="studB">rożnica z:</th>
+          </tr>
+          <tr>
+            <td class="studA">* 2.0</td>
+            <td class="studA">/ 3.0</td>
+            <td class="studB">x</td>
+            <td class="studB">y</td>
+            <td class="studB">z</td>
+          </tr>
+          <tr>
+            <td class="studA">x</td>
+            <td class="studA">1.0</td>
+            <td class="studA">2.0</td>
+            <td class="studA">0.33(3)</td>
+            <td rowspan="3" class="studB">3.7</td>
+            <td class="studB">0</td>
+            <td class="studB">-2.5</td>
+            <td class="studB">2.2</td>
+          </tr>
+          <tr>
+            <td class="studA">y</td>
+            <td class="studA">3.5</td>
+            <td class="studA">7.0</td>
+            <td class="studA">1.17</td>
+            <td class="studB">2.5</td>
+            <td class="studB">0</td>
+            <td class="studB">4.7</td>
+          </tr>
+          <tr>
+            <td class="studA">z</td>
+            <td class="studA">-1.2</td>
+            <td class="studA">-2.4</td>
+            <td class="studA">-0.4</td>
+            <td class="studB">-2.2</td>
+            <td class="studB">-4.7</td>
+            <td class="studB">0</td>
+          </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2" class="studA">Ocena</th>
+                <td colspan="2" class="studA">..................</td>
+                <th colspan="1" class="studB">Ocena</th>
+                <td colspan="3" class="studB">..................</td>
+            </tr>
+            <tr>
+                <th colspan="8" >Podpis Prowadzącego:</th>
+            </tr>
+            <tr>
+                <th colspan="8" >........................................</th>
+            </tr>
+            </tfoot>
+    </table>
+</body>
+</html>

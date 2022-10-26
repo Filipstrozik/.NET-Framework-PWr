@@ -1,0 +1,718 @@
+.background {
+    background-image: url("gradient.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+
+}
+
+.background:active {
+    background-image: none;
+    background-color: black;
+    transition: 1s;
+}
+
+.background > p {
+    color: aliceblue;
+}
+
+.element a::selection{
+    background: black;
+}
+
+.element a::after{
+    content: ' (' attr(href) ')';
+}
+
+.element a:visited{
+    background: black;
+}
+
+.element a::before {
+    content: '🔗';
+}
+
+/* MENU */
+.top-gap {
+    height: 20px;
+}
+
+.menu {
+    position: fixed;
+    left:0px;
+    top:0px;
+    font-weight: bold;
+    color: rgb(131, 14, 14);
+    border: 3px solid rgb(234, 231, 231);
+    text-align: center;
+    width: 10em;
+    background-color:rgb(95, 187, 236);
+    z-index: 1;
+}
+
+.menu > ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.menu:hover > ul {
+    display: block;
+}
+
+.menu ul li{
+    border-top: 3px solid rgb(255, 255, 255);
+    background-color:rgb(196, 210, 255);
+    width: 10em;
+    color: #5a1e1ed1
+}
+.menu > ul > li > a {
+    color: rgb(199, 86, 191);
+}
+
+.menu > ul > li > a:visited {
+    color: rgb(255, 255, 255);
+}
+.menu > ul > li:hover {
+    background-color: rgb(0, 145, 255);
+}
+a {
+    text-decoration: none;
+}
+
+.drop-down {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: -16%;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.drop-down:hover > .submenu {
+    display: block;
+}
+
+.submenu li:hover {
+    background-color: rgb(121, 13, 245);
+}
+.submenu a:visited {
+    color: black;
+}
+
+.submenu > .submenu {
+    position: absolute;
+    left: 100%;
+    top: -16%;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.submenu > .drop-down:hover .submenu {
+    display: block;
+}
+
+.submenu > .drop-down > .submenu li:hover {
+    background-color: rgb(225, 0, 255);
+}
+.submenu > .drop-down > .submenu a:visited {
+    background-color: rgb(255, 255, 255);
+}
+/* END OF MENU */
+
+/* pseudoelemment */
+.background p::first-line {
+    color: rgb(252, 0, 218);
+    text-transform: uppercase;
+}
+
+/* TEXT SIZE */
+.text-size {
+    background-color: beige;
+}
+
+#text-size-em {
+    font-size: 0.8em; 
+}
+
+#text-size-px {
+    font-size: 20px;
+}
+
+#text-size-pt {
+    font-size: 20pt;
+}
+
+#text-size-vh {
+    font-size: 10vh;
+}
+
+#text-size-vw {
+    font-size: 10vw;
+}
+
+#text-size-procent {
+    font-size: 100%;
+}
+/* END OF TEXT SIZE */
+
+/* TEXT FORMAT */
+.text-format {
+    background-color: burlywood;
+}
+
+.text-format h2 {
+    color: hsl(301, 72%, 22%);
+    font-weight: 900;
+    font-style: italic;
+    font-family: monospace;
+    font-size: 2rem
+}
+
+.text-format h3 {
+    color:rgb(255, 255, 255);
+    font-weight: normal;
+    font-family: fantasy;
+    font-size: x-large;
+    text-decoration-color: black;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+}
+
+.text-format p {
+    color: #AB081F;
+    font-weight: lighter;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+/* END OF TEXT FORMAT */
+
+/* BACKGROUNDS */
+.background-body {
+    background-image: url("gradient.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: contain
+}
+
+.background-repeat {
+    height: 50vh;
+    background-image: url("kwiaty.jpg");
+    /* background-size: 30px 30px; */
+    background-repeat: repeat;
+}
+
+.blank {
+    width: 300px;
+    height: 300px;
+}
+
+.background-absolute {
+    position: absolute;
+    top: 30vh;
+    left: 40vw;
+    background-image: url("opt.1250w.png");
+    width: 300px;
+    height: 300px;
+    background-size: 300px 100px;
+}
+
+.background-halfscreen {
+    position: relative;
+    left: 30vw;
+    width: 40vw;
+    height: 200px;
+    background-size: 40vw 200px;
+    background-image: url("smiley.jpg");
+    background-repeat: no-repeat;
+}
+
+/* END OF BACKGROUNDS */
+
+/* TABLES */
+
+#tableBorder {
+    border: 5px solid purple;
+    width: 50%;
+}
+
+#tableBorder th {
+    height: 40px;
+    border: 3px solid orange;
+    text-align: center;
+    vertical-align: top;
+}
+
+#tableBorder td {
+    vertical-align: bottom;
+    border: 2px solid gray;
+}
+
+#tableColor {
+    border: 5px solid;
+    width: 100%;
+}
+
+#tableColor th {
+    height: 50px;
+    border: 3px solid rgb(46, 64, 196);
+    text-align: left;
+    vertical-align: bottom;
+    
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#tableColor td {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: lighter;
+    border-bottom: 2px solid rgb(72, 13, 13);
+    border-left: 1px solid rgb(52, 9, 9);
+    border-right: 3px solid rgb(131, 14, 14);
+    border-top: 1px solid gray;
+}
+
+#tablica {
+    border: 5px solid;
+    width: 70%;
+}
+
+#tablica th {
+    height: 10px;
+    border: 3px solid rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#tablica td {
+    font-family: monospace;
+    text-align: center;
+    font-weight: lighter;
+    border-bottom: 3px solid rgb(238, 19, 19);
+    border-left: 4px solid rgb(0, 255, 60);
+    border-right: 3px solid rgb(32, 14, 131);
+    border-top: 3px solid rgb(211, 248, 2);
+}
+
+.studB {
+    background-color: antiquewhite;
+}
+
+.studA {
+    background-color: rgb(125, 199, 252);
+}
+
+/* END OF TABLES */
+
+
+/* BORDERS */
+
+.divs div {
+    height: 100px;
+    width: 100px;
+    background-color:rgb(252, 179, 254); 
+}
+
+.divs .outer{
+    height: 300px;
+    width: 400px;
+    background-color:rgb(92, 192, 255);
+    margin: 50px;
+    padding: 20px;
+    position: relative;
+    border-style: dashed;
+    border-width: 16px;
+}
+
+.divs .inner{
+    position: absolute;
+    margin: 0 auto;
+    border-color: rgb(5, 162, 0);
+    border-width: 10px;
+    border-style: dotted;
+    padding: 10px;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.divs .innerInner {
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+    border-width: 15px;
+    border-style: ridge;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+/* END OF BORDERS */
+
+/* BOX MARGIN */
+
+.margins .outer {
+    width: 600px;
+    height: 300px;
+    border: 5px solid black;
+}
+
+.margins  div {
+    width: auto;
+    height: 50%;
+    border: 5px solid black;
+}
+
+
+.margins .small{
+    margin: 10px;
+    border: 5px solid rgb(68, 0, 255);
+}
+
+.margins .medium{
+    margin: 50px;
+    border: 5px solid red;
+}
+
+.margins .large{
+    margin: 100px;
+    border: 5px solid orange;
+}
+
+.margins .other{
+    margin-top: 4rem;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    margin-left: 1rem;
+    border: 5px solid green;
+}
+
+/* END OF BOX MARGIN */
+/* BOX PADDING */
+.paddings .image{
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+}
+
+.paddings .outer {
+    width: 600px;
+    height: 300px;
+    border: 5px solid black;
+}
+
+.paddings .small {
+    padding: 20px;
+    border: 2px solid rgb(68, 0, 255);
+
+}
+
+.paddings .medium {
+    padding: 50px;
+    border: 5px solid red;
+}
+
+.paddings .large {
+    padding: 80px;
+    border: 5px solid orange;
+}
+
+.paddings .other{
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 50px;
+    padding-left: 10em;
+    border: 5px solid green;
+}
+
+/* END OF PADDING */
+
+/* WIDTH HEIGHT */
+.width-height .outer{
+    width: auto;
+    border: 5px solid black;
+}
+
+
+.width-height .small{
+    width:  200px;
+    height: 200px;
+    border: 2px solid rgb(68, 0, 255);
+}
+
+.width-height .small:hover{
+    width: 30%;
+    transition: 1s;
+}
+
+
+.width-height .medium {
+    width:  200px;
+    height: 200px;
+    border: 2px solid red;
+}
+
+.width-height .medium:hover {
+    width: 500px;
+    transition: 1s;
+}
+
+
+.width-height .large {
+    width:  400px;
+    height: 100px;
+    border: 2px solid orange;
+}
+
+.width-height .large:hover {
+    height: fit-content;
+    width: auto;
+    transition: 1s;
+}
+
+.width-height .other {
+    width:  300px;
+    height: 300px;
+    border: 2px solid green;
+}
+
+.width-height .other:hover {
+    height: 200px;
+    width: auto;
+    transition: 1s;
+}
+
+/* END OF WIDTH HEIGHT */
+
+/* ABSOLUTE */
+
+.absolute .blue {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+.absolute .red {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+
+    top: 80px;
+    right: 700px;
+}
+
+.absolute .green {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
+
+/* END OF ABSOLUTE */
+
+/* RELATIVE */
+.relative .parent{
+    background: aqua;
+    height: 75vh;
+    width: 75vw;
+    padding: 1em;
+    position: relative;
+    border: 5px solid black;
+}
+
+.relative .blue {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    bottom: 100px;
+    left: 100px;
+    background-color: blue;
+}
+
+.relative .red {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    background: red;
+}
+
+.relative .green {
+    position: absolute;
+    right: 100px;
+    left: 100px;
+    top: 20%;
+    bottom: 50%;
+    background: green;
+}
+
+/* END OF RELATIVE */
+
+/* FIXED */
+
+.fixed .parent{
+    background: aqua;
+    height: 75vh;
+    width: 75vw;
+    padding: 1em;
+    border: 5px solid black;
+}
+
+.fixed .blue {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.fixed .red {
+    position: fixed;
+    bottom: 0;
+    height: 30px;
+    left: 200px;
+    right: 200px;
+    background: red;
+}
+
+.fixed .green {
+    position: fixed;
+    right: 0;
+    left: 90vw;
+    top: 0;
+    bottom: 0;
+    background: green;
+}
+
+
+/* END OF FIXED */
+
+/* STATIC */
+
+.static .parent{
+    background: aqua;
+    height: 75vh;
+    width: 75vw;
+    padding: 1em;
+    border: 5px solid black;
+}
+
+.static .blue {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: static
+}
+
+.static .red {
+    position: static;
+    bottom: 0;
+    height: 30px;
+    left: 200px;
+    right: 200px;
+    background: red;
+}
+
+.static .green {
+    position: static;
+    width: 100px;
+    height: 50px;
+    bottom: 0;
+    left: 200px;
+    right: 200px;
+    background: green;
+}
+
+
+/* END OF STATIC */
+
+/* STICKY */
+
+.sticky .parent{
+    background: aqua;
+    height: 75vh;
+    width: 75vw;
+    padding: 1em;
+    border: 5px solid black;
+}
+
+.sticky .blue {
+    position: sticky;
+    top: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.sticky .red {
+    position: sticky;
+    bottom: 0;
+    top: 20%;
+    height: 30px;
+    left: 200px;
+    right: 200px;
+    background: red;
+}
+
+.sticky .green {
+    position: sticky;
+    width: 100px;
+    height: 50px;
+    top: 90%;
+    left: 200px;
+    right: 200px;
+    background: green;
+}
+
+
+/* END OF STICKY */
+
+
+/* FLOAT */
+
+.float .parent{
+    background: aqua;
+    height: 75vh;
+    width: 75vw;
+    padding: 1em;
+    border: 5px solid black;
+}
+
+.float .blue {
+    float: left;
+    top: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.float .red {
+    float: right;
+    height: 100px;
+    width: 500px;
+    background: red;
+}
+
+.float .green {
+    float: inherit;
+    width: 100px;
+    height: 50px;
+    top: 90%;
+    left: 200px;
+    right: 200px;
+    background: green;
+}
+/* END OF STATIC */
