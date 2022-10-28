@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tablica Mnożenia</title>
+</head>
+<body>
+    <h1>Random N Number Multiplication Table</h1>
+    <table id="multiplication">
+
+    </table>
+
+    <script>
+        var table = document.getElementById("multiplication");
+        var output = "";
+        var min = 1;
+        var max = 99;
+        var multiplicationRow = Array();
+        var multiplicationColumn = Array();
+
+
+        var n = window.prompt("Insert N number: ");
+        if(n < 5 || n > 20){
+            var result = confirm("Number is out of bound 5-20! N number is set to default value = 10.")
+            n = 10;
+        }
+
+        randomFillArray(multiplicationRow, n, min, max);
+        randomFillArray(multiplicationColumn, n, min, max);
+        // console.log(multiplicationRow);
+        // console.log(multiplicationColumn);
+
+        for(let i=0; i<=n; i++) {
+            output+="<tr>";
+            for(let j=0; j<=n; j++) {
+                if(i == 0){
+                    if(j > 0){
+                        output+="<th>"+multiplicationRow[j-1]+"</th>";
+                    } else {
+                        output+="<th>n="+n+"</th>"
+                    }
+                }
+                else if(j == 0){
+                    if(i > 0){
+                        output+="<th>"+multiplicationColumn[i-1]+"</th>";
+                    }
+                }
+                else {
+                    output+=isEven(multiplicationRow[i-1]*multiplicationColumn[j-1]);
+                }
+            }   
+            output+="</tr>";
+        }
+        table.innerHTML=output;
+
+
+
+        function isEven(number){
+            if(number%2==0){
+                return '<td class="even">'+number+"</td>";
+            } else {
+                return '<td class="odd">'+number+"</td>";
+            }
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max-min) + min);
+        }
+
+        function randomFillArray(arr, n, min, max) {
+            for(let i = 0; i<n; i++){
+                arr.push(getRandomInt(min,max));
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    1. losowanie liczb z zakresu ok
+    2. n podawane przez uzytkownika ok
+    3. 5 <= n <= 20, defaultowo jakaś inna jak wyjdziemy poza zakres ok
+    4. alert do punktu 3. ok
+    5. parzyste clasa even, nieparzyste klasa odd ok
+    6. style nagłowkow ok
+
+-->
