@@ -23,6 +23,12 @@
 
 
         var n = window.prompt("Insert N number: ");
+        console.log(typeof n);
+
+        while(isNaN(n)) { // NaN means Not a Number check if it is
+            alert('It is not a number, please type a number from 5 to 20.'); 
+            n = window.prompt("Insert N number: ");
+        } 
         if(n < 5 || n > 20){
             var result = confirm("Number is out of bound 5-20! N number is set to default value = 10.")
             n = 10;
@@ -30,8 +36,8 @@
 
         randomFillArray(multiplicationRow, n, min, max);
         randomFillArray(multiplicationColumn, n, min, max);
-        // console.log(multiplicationRow);
-        // console.log(multiplicationColumn);
+        console.log(multiplicationRow);
+        console.log(multiplicationColumn);
 
         for(let i=0; i<=n; i++) {
             output+="<tr>";
@@ -49,7 +55,10 @@
                     }
                 }
                 else {
-                    output+=isEven(multiplicationRow[i-1]*multiplicationColumn[j-1]);
+                    console.log("row: "+multiplicationRow[i-1]+
+                                "column: "+ multiplicationColumn[j-1]+
+                                "result: " +multiplicationRow[i-1]*multiplicationColumn[j-1])
+                    output+=isEven(multiplicationRow[j-1]*multiplicationColumn[i-1]);
                 }
             }   
             output+="</tr>";
