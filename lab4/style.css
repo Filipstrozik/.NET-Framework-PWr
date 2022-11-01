@@ -16,11 +16,11 @@ td {
 }
 
 canvas {
-    border: 2px solid black;
+    border: 3px solid rosybrown;
     position: static;
 }
 
-#big {
+.big {
     width: 500px;
     height: 500px;
     background-size: contain;
