@@ -54,8 +54,8 @@ function draw(canv) {
         
         if (isPresent) {
             let currentPos = {
-                x: (e.clientX - rect.left) / (rect.right - rect.left) * canvas.width,
-                y: (e.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height
+                x: (e.clientX - rect.left),// / (rect.right - rect.left) * canvas.width,
+                y: (e.clientY - rect.top),// / (rect.bottom - rect.top) * canvas.height
             }
 
             let lineLeftTop = {
