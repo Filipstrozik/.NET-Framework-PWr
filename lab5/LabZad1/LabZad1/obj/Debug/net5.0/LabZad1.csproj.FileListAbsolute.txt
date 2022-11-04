@@ -1,0 +1,16 @@
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\bin\Debug\net5.0\LabZad1.exe
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\bin\Debug\net5.0\LabZad1.deps.json
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\bin\Debug\net5.0\LabZad1.runtimeconfig.json
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\bin\Debug\net5.0\LabZad1.runtimeconfig.dev.json
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\bin\Debug\net5.0\LabZad1.dll
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\bin\Debug\net5.0\ref\LabZad1.dll
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\bin\Debug\net5.0\LabZad1.pdb
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\LabZad1.csproj.AssemblyReference.cache
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\LabZad1.GeneratedMSBuildEditorConfig.editorconfig
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\LabZad1.AssemblyInfoInputs.cache
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\LabZad1.AssemblyInfo.cs
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\LabZad1.csproj.CoreCompileInputs.cache
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\LabZad1.dll
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\ref\LabZad1.dll
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\LabZad1.pdb
+D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad1\LabZad1\obj\Debug\net5.0\LabZad1.genruntimeconfig.cache
