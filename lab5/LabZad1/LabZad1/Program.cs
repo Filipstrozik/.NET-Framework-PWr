@@ -9,11 +9,11 @@ namespace LabZad1
         {
             Console.WriteLine("Zadanie 1:");
 
-            int a, b, c;
+            double a, b, c;
 
-            a = Convert.ToInt32(Console.ReadLine());
-            b = Convert.ToInt32(Console.ReadLine());
-            c = Convert.ToInt32(Console.ReadLine());
+            a = Convert.ToDouble(Console.ReadLine());
+            b = Convert.ToDouble(Console.ReadLine());
+            c = Convert.ToDouble(Console.ReadLine());
 
             List<double> res =  SolveQuadraticEquation(a, b, c);
             
@@ -34,7 +34,7 @@ namespace LabZad1
 
         }
 
-        private static List<double> SolveQuadraticEquation(int a, int b, int c)
+        private static List<double> SolveQuadraticEquation(double a, double b, double c)
         {
             List<double> result = new();
             double d = b * b - 4 * a * c, x1, x2;
