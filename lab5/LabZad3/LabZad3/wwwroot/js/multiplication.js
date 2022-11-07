@@ -1,5 +1,4 @@
 ﻿var table = document.getElementById("multiplication");
-var output = "";
 var min = 1;
 var max = 99;
 var multiplicationRow = Array();
@@ -7,7 +6,6 @@ var multiplicationColumn = Array();
 
 
 var n = window.prompt("Insert N number: ", "10");
-// console.log(typeof n);
 
 while (isNaN(n)) { // NaN means Not a Number check if it is
     alert('It is not a number, please type a number from 5 to 20.');
@@ -24,38 +22,42 @@ randomFillArray(multiplicationColumn, n, min, max);
 // console.log(multiplicationColumn);
 
 for (let i = 0; i <= n; i++) {
-    output += "<tr>";
+    table.appendChild(document.createElement('tr'));
     for (let j = 0; j <= n; j++) {
         if (i == 0) {
             if (j > 0) {
-                output += "<th>" + multiplicationRow[j - 1] + "</th>";
+                var td = document.createElement('th');
+                td.innerHTML = multiplicationRow[j - 1];
+                table.appendChild(td);
             } else {
-                output += "<th>n=" + n + "</th>"
+                var td = document.createElement('th');
+                td.innerHTML = 'n = ' + n;
+                table.appendChild(td);
             }
         }
         else if (j == 0) {
             if (i > 0) {
-                output += "<th>" + multiplicationColumn[i - 1] + "</th>";
+                var td = document.createElement('th');
+                td.innerHTML = multiplicationRow[i - 1];
+                table.appendChild(td);
             }
         }
         else {
-            // console.log("row: "+multiplicationRow[i-1]+
-            //             "column: "+ multiplicationColumn[j-1]+
-            //             "result: " +multiplicationRow[i-1]*multiplicationColumn[j-1])
-            output += isEven(multiplicationRow[j - 1] * multiplicationColumn[i - 1]);
+            var td = document.createElement('td');
+            td.innerHTML = multiplicationRow[j - 1] * multiplicationColumn[i - 1];
+            td.className = isEven(multiplicationRow[j - 1] * multiplicationColumn[i - 1]);
+            table.appendChild(td);
         }
     }
-    output += "</tr>";
 }
-table.innerHTML = output;
 
 
 
 function isEven(number) {
     if (number % 2 == 0) {
-        return '<td class="even">' + number + "</td>";
+        return "even";
     } else {
-        return '<td class="odd">' + number + "</td>";
+        return "odd";
     }
 }
 
