@@ -37,6 +37,12 @@ function draw(canv) {
 
     }
 
+    function drawCircle(ctx, position) {
+        ctx.beginPath()
+        ctx.arc(position.x, position.y, 20, 0, 2 * Math.PI)
+        ctx.strokeStyle = 'red'
+        ctx.stroke()
+    }
 
     // document.addEventListener('mousedown', function(e) {
     // isPressed = true
@@ -53,7 +59,7 @@ function draw(canv) {
     // drawLine(ctx, line)
     // })
 
-
+/*
     document.addEventListener('mousemove', function (e) {
         var rect = canvas.getBoundingClientRect()
 
@@ -109,6 +115,65 @@ function draw(canv) {
 
 
     })
+    */
+    document.addEventListener('mousemove', function (e) {
+        var rect = canvas.getBoundingClientRect()
+
+        if (isPresent) {
+            let currentPos = {
+                x: (e.clientX - rect.left),// / (rect.right - rect.left) * canvas.width,
+                y: (e.clientY - rect.top),// / (rect.bottom - rect.top) * canvas.height
+            }
+
+            let lineUp = {
+                start: {
+                    x: currentPos.x,
+                    y: 0
+                },
+                end: currentPos
+            }
+
+            let lineRight = {
+                start: {
+                    x: canvas.width,
+                    y: currentPos.y
+                },
+                end: currentPos
+            }
+
+
+            let lineLeft = {
+                start: {
+                    x: 0,
+                    y: currentPos.y
+                },
+                end: currentPos
+            }
+
+
+            let lineDown = {
+                start: {
+                    x: currentPos.x,
+                    y: canvas.height
+                },
+                end: currentPos
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            drawLine(ctx, lineUp)
+            drawLine(ctx, lineRight)
+            drawLine(ctx, lineLeft)
+            drawLine(ctx, lineDown)
+            drawCircle(ctx, currentPos)
+
+
+        }
+        // ctx.strokeRect(0,0,canvas.width, canvas.height)
+
+
+
+    })
+
 
 
     canvas.addEventListener('mouseout', function (e) {
