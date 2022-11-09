@@ -59,7 +59,7 @@ function draw(canv) {
     // drawLine(ctx, line)
     // })
 
-/*
+
     document.addEventListener('mousemove', function (e) {
         var rect = canvas.getBoundingClientRect()
 
@@ -115,7 +115,7 @@ function draw(canv) {
 
 
     })
-    */
+    /*
     document.addEventListener('mousemove', function (e) {
         var rect = canvas.getBoundingClientRect()
 
@@ -174,7 +174,7 @@ function draw(canv) {
 
     })
 
-
+*/
 
     canvas.addEventListener('mouseout', function (e) {
         isPresent = false;

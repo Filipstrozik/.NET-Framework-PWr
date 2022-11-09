@@ -68,10 +68,12 @@
 
 
         function isEven(number){
-            if(number%2==0){
+            if(number%3==0){
                 return '<td class="even">'+number+"</td>";
-            } else {
+            } else if(number%3==1) {
                 return '<td class="odd">'+number+"</td>";
+            } else {
+                return '<td class="three">'+number+"</td>";
             }
         }
 
@@ -98,3 +100,5 @@
     6. style nagłowkow ok
 
 -->
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti amet, tempore temporibus iusto ipsum a, officiis aperiam totam ducimus doloremque inventore quos dignissimos, omnis commodi in unde labore laborum quasi.

@@ -6,6 +6,10 @@
     background-color: rgb(119, 96, 231);
 }
 
+.three {
+    background-color: rgb(255,0, 0);
+}
+
 th {
     border: 2px solid black;
     background-color: rgb(91, 129, 243);

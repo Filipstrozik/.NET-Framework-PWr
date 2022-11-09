@@ -9,7 +9,6 @@ D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad3\LabZad3\bin\Debug\net5.0\ref\LabZ
 D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad3\LabZad3\bin\Debug\net5.0\LabZad3.pdb
 D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad3\LabZad3\bin\Debug\net5.0\LabZad3.Views.dll
 D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad3\LabZad3\bin\Debug\net5.0\LabZad3.Views.pdb
-D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad3\LabZad3\obj\Debug\net5.0\LabZad3.csproj.AssemblyReference.cache
 D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad3\LabZad3\obj\Debug\net5.0\LabZad3.GeneratedMSBuildEditorConfig.editorconfig
 D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad3\LabZad3\obj\Debug\net5.0\LabZad3.AssemblyInfoInputs.cache
 D:\MAIN\CODING\Sem5\NET Framework\lab5\LabZad3\LabZad3\obj\Debug\net5.0\LabZad3.AssemblyInfo.cs

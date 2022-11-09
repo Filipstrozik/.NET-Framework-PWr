@@ -54,10 +54,12 @@ for (let i = 0; i <= n; i++) {
 
 
 function isEven(number) {
-    if (number % 2 == 0) {
+    if (number % 3 == 0) {
         return "even";
-    } else {
+    } else if (number % 3 == 1) {
         return "odd";
+    } else if (number % 3 == 2){
+        return "sec";
     }
 }
 
