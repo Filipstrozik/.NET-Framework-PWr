@@ -1,0 +1,16 @@
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\bin\Debug\net5.0\Lab6.exe
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\bin\Debug\net5.0\Lab6.deps.json
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\bin\Debug\net5.0\Lab6.runtimeconfig.json
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\bin\Debug\net5.0\Lab6.runtimeconfig.dev.json
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\bin\Debug\net5.0\Lab6.dll
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\bin\Debug\net5.0\ref\Lab6.dll
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\bin\Debug\net5.0\Lab6.pdb
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\Lab6.csproj.AssemblyReference.cache
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\Lab6.GeneratedMSBuildEditorConfig.editorconfig
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\Lab6.AssemblyInfoInputs.cache
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\Lab6.AssemblyInfo.cs
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\Lab6.csproj.CoreCompileInputs.cache
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\Lab6.dll
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\ref\Lab6.dll
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\Lab6.pdb
+D:\MAIN\CODING\Sem5\NET Framework\lab6\Lab6\Lab6\obj\Debug\net5.0\Lab6.genruntimeconfig.cache
