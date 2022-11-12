@@ -2,14 +2,13 @@
 
 namespace Lab6
 {
+
     class Program
     {
         static void Main(string[] args)
         {
-            Zad4();
+            Zad2();
         }
-
-
 
 
         static void Zad1()
@@ -21,12 +20,19 @@ namespace Lab6
         }
 
         //TODO no chyba sie nie da bo to zarezerwowane słowo kluczowe?
+        // moze chodzi o stworzenie zwyklej klasy...
         static void Zad2()
         {
             Console.WriteLine("Zad2:");
             /*string class = "hhe";*/
-/*            Console.WriteLine(class);
-*/
+            /*            Console.WriteLine(class);
+            */
+            //var test = new {dynamic class = "filip"};
+
+            //lub
+            DataKeeper myDataKeeper = new DataKeeper();
+            myDataKeeper.Data = "1234567890";
+            Console.WriteLine(myDataKeeper.Data);
             Console.WriteLine("------------------");
         }
 
@@ -49,18 +55,6 @@ namespace Lab6
             Console.WriteLine("------------------");
         }
 
-        /*Określenie typu zmiennej jako dynamic oznacza, że wszelkie
-        operacje na danej zmiennej będą sprawdzane dopiero
-        podczas wykonania*/
-
-        //TODO czy to odpowiada na pytanie?
-        private static void WriteAnonymousType(dynamic anon) 
-        {
-            var anonTypeInside = new { anon.imie, anon.nazwisko, anon.wiek, anon.placa };
-
-            System.Console.WriteLine($"1) Pracownik: {anonTypeInside.imie} {anonTypeInside.nazwisko} w wieku {anonTypeInside.wiek} lat, zarabia {anonTypeInside.placa}");
-        }
-
         static void Zad5()
         {
             Console.WriteLine("Zad5:");
@@ -72,19 +66,72 @@ namespace Lab6
             Console.WriteLine("------------------");
         }
 
-        //TODO implement this
         static void Zad6()
         {
             Console.WriteLine("Zad6:");
-            UseArrays();
+            Console.WriteLine("Should be: (1, 0, 0, 0,");
+            CountMyTypes(1, 2, 3, 5, 7, -2.4, -3.4, -4.5, "1234", "soss");
+            Console.WriteLine("Should be: (2, 3, 0, 2,");
+            CountMyTypes(1, 2, 3, 4, 5, 0.3, 3.4, 5.5, "sos", "what", false, true);
+            Console.WriteLine("Should be: (0, 0, 0, 3,");
+            CountMyTypes(new object[] { true, false, new int[] { 1, 2, 3 } });
+            Console.WriteLine("Should be: (0, 0, 1, 0,");
+            CountMyTypes("12345");
             Console.WriteLine("------------------");
         }
 
 
 
+        /*Określenie typu zmiennej jako dynamic oznacza, że wszelkie
+        operacje na danej zmiennej będą sprawdzane dopiero
+        podczas wykonania*/
+
+        private static void WriteAnonymousType(dynamic anon)
+        {
+            //tak sie nie da w łatwy sposob Cannot deconstruct dynamic type
+            //(string imie1, string nazwisko1, int wiek1, int placa1) = anon; zatem ODP: da się ale nie jest to takie łatwe jak w dekonstrukcji krotki
+            //tutaj trzeba niebezpiecznie dostać się do każdego atrybutu typu aninimowego osobno.
+
+            //z przekazanego parametru:
+            System.Console.WriteLine($"1) Pracownik: {anon.imie} {anon.nazwisko} w wieku {anon.wiek} lat, zarabia {anon.placa}");
+
+            //do innego typu anonimowego
+            var anonTypeInside = new { anon.imie, anon.nazwisko, anon.wiek, anon.placa };
+            System.Console.WriteLine($"1) Pracownik: {anonTypeInside.imie} {anonTypeInside.nazwisko} w wieku {anonTypeInside.wiek} lat, zarabia {anonTypeInside.placa}");
+
+        }
+        private static (int, int, int, int) CountMyTypes(params object[] tab)
+        {
+            int evenInt = 0, positiveDouble = 0, atLeast5String = 0, others = 0;
+            foreach (var elem in tab)
+            {
+                switch (elem)
+                {
+                    case int number when number % 2 == 0:
+                        evenInt++;
+                        break;
+                    case int number when true:
+                        break;
+                    case double real when real > 0:
+                        positiveDouble++;
+                        break;
+                    case string word when word.Length >= 5:
+                        atLeast5String++;
+                        break;
+                    case object obj when (obj is not int) && (obj is not double) && (obj is not string):
+                        others++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.WriteLine((evenInt, positiveDouble, atLeast5String, others));
+            return (evenInt, positiveDouble, atLeast5String, others);
+        }
+
         private static void UseArrays()
         {
-            int[] nums = new int[10] { 10, 15, 16, 8, 6, 25, 27, 37, 48, -2};
+            int[] nums = new int[10] { 10, 15, 16, 8, 6, 25, 27, 37, 48, -2 };
             Array.ForEach(nums, n => Console.Write($"{n} "));
             Console.WriteLine();
 
