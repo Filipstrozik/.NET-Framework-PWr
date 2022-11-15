@@ -7,7 +7,12 @@ namespace Lab6
     {
         static void Main(string[] args)
         {
+            Zad1();
             Zad2();
+            Zad3();
+            Zad4();
+            Zad5();
+            Zad6();
         }
 
 
@@ -19,20 +24,13 @@ namespace Lab6
             Console.WriteLine("------------------");
         }
 
-        //TODO no chyba sie nie da bo to zarezerwowane słowo kluczowe?
-        // moze chodzi o stworzenie zwyklej klasy...
+        //The @ character prefixes a code element that the compiler is to interpret as an identifier rather than a C# keyword.
         static void Zad2()
         {
             Console.WriteLine("Zad2:");
-            /*string class = "hhe";*/
-            /*            Console.WriteLine(class);
-            */
-            //var test = new {dynamic class = "filip"};
-
-            //lub
-            DataKeeper myDataKeeper = new DataKeeper();
-            myDataKeeper.Data = "1234567890";
-            Console.WriteLine(myDataKeeper.Data);
+            double @class;
+            @class = 21.37;
+            Console.WriteLine(@class);
             Console.WriteLine("------------------");
         }
 
@@ -69,13 +67,13 @@ namespace Lab6
         static void Zad6()
         {
             Console.WriteLine("Zad6:");
-            Console.WriteLine("Should be: (1, 0, 0, 0,");
+            Console.WriteLine("Should be: (1, 0, 0, 0)");
             CountMyTypes(1, 2, 3, 5, 7, -2.4, -3.4, -4.5, "1234", "soss");
-            Console.WriteLine("Should be: (2, 3, 0, 2,");
+            Console.WriteLine("Should be: (2, 3, 0, 2)");
             CountMyTypes(1, 2, 3, 4, 5, 0.3, 3.4, 5.5, "sos", "what", false, true);
-            Console.WriteLine("Should be: (0, 0, 0, 3,");
+            Console.WriteLine("Should be: (0, 0, 0, 3)");
             CountMyTypes(new object[] { true, false, new int[] { 1, 2, 3 } });
-            Console.WriteLine("Should be: (0, 0, 1, 0,");
+            Console.WriteLine("Should be: (0, 0, 1, 0)");
             CountMyTypes("12345");
             Console.WriteLine("------------------");
         }
@@ -118,7 +116,7 @@ namespace Lab6
                     case string word when word.Length >= 5:
                         atLeast5String++;
                         break;
-                    case object obj when (obj is not int) && (obj is not double) && (obj is not string):
+                    case object obj when (obj is not int) && (obj is not double) && (obj is not string): //inne typy i nie spelniajace pow. warunkow
                         others++;
                         break;
                     default:
