@@ -174,8 +174,13 @@ namespace Lab6
             (string Im, string Nazw, int Wi, int Pl) krotka4 = krotka;
             System.Console.WriteLine($"4) Pracownik: {krotka4.Im} {krotka4.Nazw} w wieku {krotka4.Wi} lat, zarabia {krotka4.Pl}");
 
+            (string Im, string Nazw, int Wi, int Pl) krotka5 = (krotka.Imie, krotka.Nazwisko, krotka.Wiek, krotka.Płaca);
+            System.Console.WriteLine($"5) Pracownik: {krotka5.Item1} {krotka5.Item2} w wieku {krotka5.Item3} lat, zarabia {krotka5.Item4}");
 
-            System.Console.WriteLine($"4) Pracownik: {krotka.Imie} {krotka.Nazwisko} w wieku {krotka.Wiek} lat, zarabia {krotka.Płaca}");
+            var krotka6 = (Name: krotka.Imie, Surname: krotka.Nazwisko, Age: krotka.Wiek, Salary: krotka.Płaca);
+            System.Console.WriteLine($"6) Pracownik: {krotka6.Name} {krotka6.Surname} w wieku {krotka6.Age} lat, zarabia {krotka6.Salary}");
+
+            System.Console.WriteLine($"7) Pracownik: {krotka.Imie} {krotka.Nazwisko} w wieku {krotka.Wiek} lat, zarabia {krotka.Płaca}");
         }
 
         private static void DrawCard(string imie, string nazwisko = "Kowalski", string znak = "X", int border = 1, int width = 12)
