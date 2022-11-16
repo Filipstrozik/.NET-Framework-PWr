@@ -108,8 +108,6 @@ namespace Lab6
                     case int number when number % 2 == 0:
                         evenInt++;
                         break;
-                    case int number when true:
-                        break;
                     case double real when real > 0:
                         positiveDouble++;
                         break;
