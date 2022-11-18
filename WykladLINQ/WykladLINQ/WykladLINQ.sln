@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WykladLINQ", "WykladLINQ\WykladLINQ.csproj", "{FA67D289-C663-4304-9915-EABAA5648199}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqExamples", "LinqExamples\LinqExamples.csproj", "{D6A85714-AD8F-45CA-B9C7-F6E99C5DDEF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab07", "Lab07", "{47F9DFCC-FE64-4C84-8C07-4388497A23D7}"
+	ProjectSection(SolutionItems) = preProject
+		WykladLINQ\Program.cs = WykladLINQ\Program.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA67D289-C663-4304-9915-EABAA5648199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA67D289-C663-4304-9915-EABAA5648199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA67D289-C663-4304-9915-EABAA5648199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA67D289-C663-4304-9915-EABAA5648199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6A85714-AD8F-45CA-B9C7-F6E99C5DDEF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A85714-AD8F-45CA-B9C7-F6E99C5DDEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A85714-AD8F-45CA-B9C7-F6E99C5DDEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A85714-AD8F-45CA-B9C7-F6E99C5DDEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BF24292-710D-45F5-BF6E-4F8689FE5A22}
+	EndGlobalSection
+EndGlobal
