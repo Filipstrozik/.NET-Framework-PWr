@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace lab7
 {
@@ -8,14 +9,6 @@ namespace lab7
 
     public class Student
     {
-        private int v1;
-        private int v2;
-        private string v3;
-        private Gender female;
-        private bool v4;
-        private int v5;
-        private List<int> list;
-
         public int Id { get; set; }
         public int Index { get; set; }
         public string Name { get; set; }
@@ -58,7 +51,7 @@ namespace lab7
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"{Id,2}), {Name,11}";
         }
     }
 
@@ -149,6 +142,8 @@ namespace lab7
 
         public static void zad3()
         {
+            Console.WriteLine("lista tematow 1 ------------");
+            //TODO how to make this as a qes query not hardcoded?
             var tematy = new List<Topic>() {
             new Topic(1,"C#"),
             new Topic(2,"C++"),
@@ -161,6 +156,24 @@ namespace lab7
             new Topic(9,"neural networks"),
             new Topic(10,"web programming")
             };
+
+            tematy.ForEach(Console.WriteLine);
+
+            Console.WriteLine("lista tematow 2------------");
+            List<string> topics = new()
+            {
+                "C#", "C++", "Java", "PHP", "algorithms", "fuzzy logic", "Basic", "JavaScript", "neural networks", "web programming"
+            };
+
+ 
+
+            List<Topic> tematy2 = new List<Topic>();
+            int id = 1;
+            tematy2 = (from t in topics
+                      select new Topic(id++, t)).ToList();
+
+            tematy2.ForEach(Console.WriteLine);
+
             Console.WriteLine("a1------------");
             List<Student> newStudList = Generator.GenerateStudentsWithTopicsEasy().Select(s => new Student(
             
@@ -190,9 +203,38 @@ namespace lab7
                   on o equals n.Name
                   select n.Id).ToList());
             qesNewStudList.ToList().ForEach(Console.WriteLine);
+
+            Console.WriteLine("b1------------");
+
+            //TODO make ManyToMany relationship 
         }
 
 
+        public static void zad4()
+        {
+            List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
+
+            var meths = list.GetType().GetMethods();
+            foreach (var meth in meths)
+            {
+                Console.WriteLine($" Name : {meth.Name}");
+                Console.WriteLine($" Params amount : {meth.GetParameters().Length}"); // number of parameter
+            }
+
+
+            MethodInfo methodInfo = list.GetType().GetMethod("get_Count");
+            int res = (int)methodInfo.Invoke(list, null);
+            Console.WriteLine(res);
+            //MethodInfo methodInfo = list.GetType().GetMethod("Count", new Type[] {typeof(Func<int, bool>) });
+            //int res = (int)methodInfo.Invoke(list, new object[] {new Func<int, bool>(t => t % 2 == 0) });
+            //Console.WriteLine(res);
+
+
+            string test = "object reference not set to an instance of an object";
+            MethodInfo m2 = test.GetType().GetMethod("Contains", new Type[] { typeof(string) });
+            bool conatins = (bool)m2.Invoke(test, new object[] { "reference" });
+            Console.WriteLine(conatins);
+        }
 
         public static void ShowAllCollections()
         {
@@ -205,9 +247,10 @@ namespace lab7
         {
             ShowAllCollections();
             Console.WriteLine("-----------------------");
-            //zad1(2);
-            //zad2();
+            zad1(2);
+            zad2();
             zad3();
+            zad4();
 
         }
     }
