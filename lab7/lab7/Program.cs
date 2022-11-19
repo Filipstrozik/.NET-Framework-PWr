@@ -170,12 +170,13 @@ namespace lab7
                 s.Gender,
                 s.Active,
                 s.DepartmentId,
-                s.Topics.Join(tematy, temat => temat, topic => topic.Name, (nazw, id) => new { TopicId = id.Id }).Select(e => e.TopicId).ToList()
+               //depricated s.Topics.Join(tematy, temat => temat, topic => topic.Name, (nazw, id) => new { TopicId = id.Id }).Select(e => e.TopicId).ToList()
+                s.Topics.Join(tematy, temat => temat, topic => topic.Name, (nazw, id) => id.Id).ToList()
             )).ToList();
 
             newStudList.ForEach(Console.WriteLine);
             Console.WriteLine("a2------------");
-            //TODO implement this
+            
             var qesNewStudList = from s in Generator.GenerateStudentsWithTopicsEasy()
                                  select new Student(
                 s.Id,
@@ -187,17 +188,10 @@ namespace lab7
                 (from o in s.Topics
                   join n in tematy
                   on o equals n.Name
-                  select new
-                  {
-                      TopicId = n.Id
-                  } into e
-                  select e.TopicId).ToList());
-            //s.Topics.Join(tematy, temat => temat, topic => topic.Name, (nazw, id) => new { TopicId = id.Id }).Select(e => e.TopicId).ToList());
+                  select n.Id).ToList());
             qesNewStudList.ToList().ForEach(Console.WriteLine);
         }
 
-        /*        Topics = s.Topics.Select(
-            topic => tematy.Where(top => top.Name.Equals(topic)).Select(t => t.Id)).ToList()*/
 
 
         public static void ShowAllCollections()
