@@ -212,22 +212,26 @@ namespace lab7
 
         public static void zad4()
         {
+
             List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
 
-            var meths = list.GetType().GetMethods();
+/*            var meths = list.GetType().GetMethods();
             foreach (var meth in meths)
             {
                 Console.WriteLine($" Name : {meth.Name}");
                 Console.WriteLine($" Params amount : {meth.GetParameters().Length}"); // number of parameter
-            }
+            }*/
 
+            MethodInfo methodInfo1 = list.GetType().GetMethod("RemoveRange", new Type[] { typeof(int), typeof(int)});
+            methodInfo1.Invoke(list, new object[] { 1, 2 });
+            list.ForEach(Console.Write);
+            Console.WriteLine();
+            
 
             MethodInfo methodInfo = list.GetType().GetMethod("get_Count");
             int res = (int)methodInfo.Invoke(list, null);
-            Console.WriteLine(res);
-            //MethodInfo methodInfo = list.GetType().GetMethod("Count", new Type[] {typeof(Func<int, bool>) });
-            //int res = (int)methodInfo.Invoke(list, new object[] {new Func<int, bool>(t => t % 2 == 0) });
-            //Console.WriteLine(res);
+            Console.WriteLine($"Contains =: {res}");
+
 
 
             string test = "object reference not set to an instance of an object";
