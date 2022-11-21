@@ -38,6 +38,34 @@ namespace lab7
             return result;
         }
     }
+
+    public class StudentMtm
+    {
+        public int Id { get; set; }
+        public int Index { get; set; }
+        public string Name { get; set; }
+        public Gender Gender { get; set; }
+        public bool Active { get; set; }
+        public int DepartmentId { get; set; }
+
+        public StudentMtm(int id, int index, string name, Gender gender, bool active,
+            int departmentId)
+        {
+            this.Id = id;
+            this.Index = index;
+            this.Name = name;
+            this.Gender = gender;
+            this.Active = active;
+            this.DepartmentId = departmentId;
+        }
+
+
+        public override string ToString()
+        {
+            var result = $"{Id,2}) {Index,5}, {Name,11}, {Gender,6},{(Active ? "active" : "no active"),9},{DepartmentId,2},";
+            return result;
+        }
+    }
     class Topic
     {
         public int Id { get; set; }
@@ -52,6 +80,23 @@ namespace lab7
         public override string ToString()
         {
             return $"{Id,2}), {Name,11}";
+        }
+    }
+
+    class StudentToTopic
+    {
+        public int StudentId { get; set; }
+        public int TopicId { get; set; }
+
+        public StudentToTopic(int studId, int topicId)
+        {
+            StudentId = studId;
+            TopicId = topicId;
+        }
+
+        public override string ToString()
+        {
+            return $"{StudentId,2}), {TopicId,11}";
         }
     }
 
@@ -159,13 +204,11 @@ namespace lab7
 
             tematy.ForEach(Console.WriteLine);
 
-            Console.WriteLine("lista tematow 2------------");
+            Console.WriteLine("lista tematow 2 (b)------------");
             List<string> topics = new()
             {
                 "C#", "C++", "Java", "PHP", "algorithms", "fuzzy logic", "Basic", "JavaScript", "neural networks", "web programming"
             };
-
- 
 
             List<Topic> tematy2 = new List<Topic>();
             int id = 1;
@@ -204,9 +247,55 @@ namespace lab7
                   select n.Id).ToList());
             qesNewStudList.ToList().ForEach(Console.WriteLine);
 
-            Console.WriteLine("b1------------");
+            Console.WriteLine("c1------------");
 
-            //TODO make ManyToMany relationship 
+            //create new students
+            List<StudentMtm> newStudMtmList = Generator.GenerateStudentsWithTopicsEasy().Select(s => new StudentMtm(
+                s.Id,
+                s.Index,
+                s.Name,
+                s.Gender,
+                s.Active,
+                s.DepartmentId
+                )).ToList();
+
+            newStudMtmList.ForEach(Console.WriteLine);
+
+            //create topics
+            int counter = 1;
+            List<Topic> newTopicList = Generator.GenerateStudentsWithTopicsEasy().SelectMany(elem => elem.Topics).GroupBy(t => t)
+                .Select(t => new Topic(
+                    counter++, t.Key
+                    )).ToList();
+
+            newTopicList.ForEach(Console.WriteLine);
+
+            //pray god for his below
+            var sth = Generator.GenerateStudentsWithTopicsEasy()
+                .SelectMany(s => s.Topics, (student, topic) => new
+                {
+                    Id = student.Id,
+                    Topic = newTopicList.First(t => t.Name.Equals(topic)).Id
+                }).Select(r => new StudentToTopic(r.Id, r.Topic));
+            
+
+            foreach (var item in sth)
+            {
+                Console.WriteLine(item);
+
+            }
+
+
+
+
+            //Using Query Syntax
+/*            var QuerySyntax = (from std in Student.GetStudents()
+                               from program in std.Programming
+                               select new
+                               {
+                                   StudentName = std.Name,
+                                   ProgramName = program
+                               }).ToList();*/
         }
 
 
@@ -251,10 +340,10 @@ namespace lab7
         {
             ShowAllCollections();
             Console.WriteLine("-----------------------");
-            zad1(2);
-            zad2();
+            //zad1(2);
+            //zad2();
             zad3();
-            zad4();
+            //zad4();
 
         }
     }
