@@ -17,7 +17,7 @@ namespace lab7
         public static int[] GenerateIntsMany()
         {
             var result = new int[10000];
-            Random random = new Random();
+            Random random = new();
             for (int i = 0; i < result.Length; i++)
                 result[i] = random.Next(1000);
             return result;

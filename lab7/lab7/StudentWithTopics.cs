@@ -4,13 +4,13 @@ namespace lab7
 {
     public class StudentWithTopics
     {
-        private int v1;
+/*        private int v1;
         private int v2;
         private string v3;
         private Gender female;
         private bool v4;
         private int v5;
-        private List<string> list;
+        private List<string> list;*/
 
         public int Id { get; set; }
         public int Index { get; set; }

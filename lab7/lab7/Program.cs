@@ -104,8 +104,9 @@ namespace lab7
 
     class Program
     {
-        public static void zad1(int n)
+        public static void Zad1(int n)
         {
+            Console.WriteLine("1a-----------------------");
             var resStud = Generator.GenerateStudentsWithTopicsEasy()
                             .OrderBy(s => s.Name)
                             .ThenBy(s => s.Index)
@@ -118,7 +119,21 @@ namespace lab7
                 group.Students.ToList().ForEach(s => Console.WriteLine(s));
             }
 
-            Console.WriteLine("-----------------------");
+            Console.WriteLine("1b-----------------------");
+
+            int index = 0;
+            var sth = Generator.GenerateStudentsWithTopicsEasy()
+                            .OrderBy(s => s.Name)
+                            .ThenBy(s => s.Index)
+                            .GroupBy(r => index++ / n).ToList();
+
+            foreach (var group in sth)
+            {
+                Console.WriteLine(group.Key);
+                group.ToList().ForEach(s => Console.WriteLine(s));
+            }
+
+            Console.WriteLine("qes-----------------------");
 
             var resStud2 = from s in Generator.GenerateStudentsWithTopicsEasy()
                            orderby s.Name, s.Index
@@ -131,11 +146,22 @@ namespace lab7
                 Console.WriteLine(group.Name);
                 group.Students.ToList().ForEach(s => Console.WriteLine(s));
             }
+            Console.WriteLine("qes-2----------------------");
+            index = 0;
+            var qes2 = from s in Generator.GenerateStudentsWithTopicsEasy()
+                       orderby s.Name, s.Index
+                       group s by (index++ / n);
 
+
+            foreach (var group in qes2)
+            {
+                Console.WriteLine(group.Key);
+                group.ToList().ForEach(s => Console.WriteLine(s));
+            }
         }
 
 
-        public static void zad2()
+        public static void Zad2()
         {
             //a
             Console.WriteLine("a1------------");
@@ -185,7 +211,7 @@ namespace lab7
 
         }
 
-        public static void zad3()
+        public static void Zad3()
         {
             Console.WriteLine("lista tematow 1 ------------");
             //TODO how to make this as a qes query not hardcoded?
@@ -210,7 +236,7 @@ namespace lab7
                 "C#", "C++", "Java", "PHP", "algorithms", "fuzzy logic", "Basic", "JavaScript", "neural networks", "web programming"
             };
 
-            List<Topic> tematy2 = new List<Topic>();
+            List<Topic> tematy2 = new();
             int id = 1;
             tematy2 = (from t in topics
                       select new Topic(id++, t)).ToList();
@@ -226,7 +252,6 @@ namespace lab7
                 s.Gender,
                 s.Active,
                 s.DepartmentId,
-               //depricated s.Topics.Join(tematy, temat => temat, topic => topic.Name, (nazw, id) => new { TopicId = id.Id }).Select(e => e.TopicId).ToList()
                 s.Topics.Join(tematy, temat => temat, topic => topic.Name, (nazw, id) => id.Id).ToList()
             )).ToList();
 
@@ -270,11 +295,11 @@ namespace lab7
 
             newTopicList.ForEach(Console.WriteLine);
 
-            //pray god for his below
+            //pray god for this below
             var sth = Generator.GenerateStudentsWithTopicsEasy()
                 .SelectMany(s => s.Topics, (student, topic) => new
                 {
-                    Id = student.Id,
+                    student.Id,
                     Topic = newTopicList.First(t => t.Name.Equals(topic)).Id
                 }).Select(r => new StudentToTopic(r.Id, r.Topic));
             
@@ -286,23 +311,27 @@ namespace lab7
             }
 
 
-
+            Console.WriteLine("c1---qes----------------");
 
             //Using Query Syntax
-/*            var QuerySyntax = (from std in Student.GetStudents()
-                               from program in std.Programming
-                               select new
-                               {
-                                   StudentName = std.Name,
-                                   ProgramName = program
-                               }).ToList();*/
+            var qes = (from std in Generator.GenerateStudentsWithTopicsEasy()
+                       from topic in std.Topics
+                       select new StudentToTopic
+                       (
+                           std.Id,
+                           (from t in newTopicList
+                           where t.Name == topic
+                           select t.Id).Single()
+                       )).ToList();
+
+            qes.ForEach(Console.WriteLine);
         }
 
 
-        public static void zad4()
+        public static void Zad4()
         {
 
-            List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
+            List<int> list = new() { 1, 2, 3, 4, 5 };
 
 /*            var meths = list.GetType().GetMethods();
             foreach (var meth in meths)
@@ -340,10 +369,10 @@ namespace lab7
         {
             ShowAllCollections();
             Console.WriteLine("-----------------------");
-            //zad1(2);
-            //zad2();
-            zad3();
-            //zad4();
+            //Zad1(2);
+            //Zad2();
+            Zad3();
+            //Zad4();
 
         }
     }
