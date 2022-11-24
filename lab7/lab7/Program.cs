@@ -165,7 +165,8 @@ namespace lab7
         {
             //a
             Console.WriteLine("a1------------");
-            var resStud = Generator.GenerateStudentsWithTopicsEasy().SelectMany(elem => elem.Topics).GroupBy(t => t).Select(group => new { Topic = group.Key, count = group.Count() }).OrderByDescending(g => g.count);
+            var resStud = Generator.GenerateStudentsWithTopicsEasy().SelectMany(elem => elem.Topics).GroupBy(t => t)
+                .Select(group => new { Topic = group.Key, count = group.Count() }).OrderByDescending(g => g.count);
             resStud.ToList().ForEach(Console.WriteLine);
             Console.WriteLine("a2------------");
             var qesRes = from s in Generator.GenerateStudentsWithTopicsEasy()
@@ -333,16 +334,18 @@ namespace lab7
 
             List<int> list = new() { 1, 2, 3, 4, 5 };
 
-/*            var meths = list.GetType().GetMethods();
-            foreach (var meth in meths)
-            {
-                Console.WriteLine($" Name : {meth.Name}");
-                Console.WriteLine($" Params amount : {meth.GetParameters().Length}"); // number of parameter
-            }*/
+            /*            var meths = list.GetType().GetMethods();
+                        foreach (var meth in meths)
+                        {
+                            Console.WriteLine($" Name : {meth.Name}");
+                            Console.WriteLine($" Params amount : {meth.GetParameters().Length}"); // number of parameter
+                        }*/
+
+            Console.WriteLine("zad4---------------");
 
             MethodInfo methodInfo1 = list.GetType().GetMethod("RemoveRange", new Type[] { typeof(int), typeof(int)});
             methodInfo1.Invoke(list, new object[] { 1, 2 });
-            list.ForEach(Console.Write);
+            list.ForEach(e => Console.Write($"{e} "));
             Console.WriteLine();
             
 
@@ -369,10 +372,10 @@ namespace lab7
         {
             ShowAllCollections();
             Console.WriteLine("-----------------------");
-            //Zad1(2);
-            //Zad2();
+            Zad1(2);
+            Zad2();
             Zad3();
-            //Zad4();
+            Zad4();
 
         }
     }
