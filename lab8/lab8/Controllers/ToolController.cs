@@ -16,7 +16,13 @@ namespace lab8.Controllers
         public IActionResult Solve(int a, int b, int c)
         {
             List<double> res = SolveQuadraticEquation(a, b, c);
-            if (res.Count == 0)
+            ViewBag.a = a;
+            ViewBag.b = b;
+            ViewBag.c = c;
+            ViewBag.dateNow = DateTime.Now;
+            ViewBag.resultList = res;
+            ViewBag.title = "Solve Quadratic Equation";
+/*            if (res.Count == 0)
             {
                 ViewBag.Message = $"Dla równania kwadratowego: {a}x^2 + ({b})x + ({c}) = 0." +
                     " nie istnieje rozwiazanie:";
@@ -35,8 +41,7 @@ namespace lab8.Controllers
             {
                 ViewBag.Message = $"Dla równania kwadratowego: {a}x^2 + ({b})x + ({c}) = 0." +
                     "istnieje nieskonczenie wiele rozwiązan :";
-            }
-            //ViewBag.Message = "Parametric page a=" + a + " b=" + b + " , c=" + c;
+            }*/
             return View("Solve");
         }
 

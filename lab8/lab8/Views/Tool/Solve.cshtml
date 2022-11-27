@@ -2,7 +2,61 @@
     ViewData["Title"] = "Solve";
 *@
 
+@{ var list = ViewBag.resultList;
+    var len = list.Count;
+    var color = "black";}
 
-<h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
-<p>My web page.</p>
+@if (len == 0)
+{
+    <h3>No results!</h3>
+    color = "red";
+}
+
+@if (len == 3)
+{
+    <h3>Infinity results.</h3>
+    color = "green";
+}
+
+@if (len == 1)
+{
+    <h3>One result.</h3>
+    color = "blue";
+}
+
+@if (len == 2)
+{
+    <h3>Two results.</h3>
+    color = "orange";
+}
+
+<body style="background-color:@color>
+    <h2>@ViewBag.Title</h2>
+    <h3>@ViewBag.Message</h3>
+    My parameters:
+    <br />
+    <b> a: @ViewBag.a</b>
+    <br />
+    <b> b: @ViewBag.b</b>
+    <br />
+    <b> c: @ViewBag.c</b>
+    <br />
+
+    <ul id="colors">
+        @if (len == 1 || len == 2)
+        {
+            @foreach (var result in ViewBag.resultList)
+            {
+                <li>
+                    <font color=@color> @result</font>
+                </li>
+            }
+        }
+    </ul>
+</body>
+
+
+
+
+
+

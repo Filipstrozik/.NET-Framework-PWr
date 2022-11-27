@@ -49,14 +49,29 @@ namespace lab8
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-                endpoints.MapControllerRoute(
                     name: "Tool",
                     pattern: "Tool/Solve/{a}/{b}/{c}",
                     defaults: new { controller = "Tool" , action = "Solve"}
                     );
+
+                endpoints.MapControllerRoute(
+                    name: "Set",
+                    pattern: "Set,{setNumber}",
+                    defaults: new {controller = "Game", action = "Set" });
+
+                endpoints.MapControllerRoute(
+                    name: "Draw",
+                    pattern: "Draw",
+                    defaults: new {controller = "Game", action = "Draw" });
+
+                endpoints.MapControllerRoute(
+                    name: "Guess",
+                    pattern: "Guess,{guessedNumber}",
+                    defaults: new { controller = "Game", action = "Guess" });
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
