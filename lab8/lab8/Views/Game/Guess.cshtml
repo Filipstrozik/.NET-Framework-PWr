@@ -3,18 +3,10 @@
 *@
 
 
-<h1>Guessing Game</h1>
-<h3>Round: @ViewBag.Round</h3>
-@if (ViewBag.Clue == 1)
-{
-    <h2 class="red-text" style="color: red;">TooBig</h2>
-}
-else if (ViewBag.Clue == -1)
-{
-    <h2 class="blue-text" style="color: blue;">TooLow</h2>
-}
-else
-{
-    <h2 class="green-text" style="color: green;">Correct</h2>
-}
-<h3>@ViewBag.Message</h3>
+<body class=@ViewBag.Clue>
+    <h1>Guessing Game</h1>
+    <h2>Round: @ViewBag.Round</h2>
+    <h2>Result: @ViewBag.Message</h2>
+</body>
+
+

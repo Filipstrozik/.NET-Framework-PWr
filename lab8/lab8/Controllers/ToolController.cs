@@ -22,26 +22,27 @@ namespace lab8.Controllers
             ViewBag.dateNow = DateTime.Now;
             ViewBag.resultList = res;
             ViewBag.title = "Solve Quadratic Equation";
-/*            if (res.Count == 0)
+            if (res.Count == 0)
             {
-                ViewBag.Message = $"Dla równania kwadratowego: {a}x^2 + ({b})x + ({c}) = 0." +
-                    " nie istnieje rozwiazanie:";
+                ViewBag.Message = "No results!";
+                ViewBag.Type = "noresults";
             }
             else if (res.Count == 2)
             {
-                ViewBag.Message = $"Dla równania kwadratowego: {a}x^2 + ({b})x + ({c}) = 0." +
-                    $" istnieja dwa rozwiązania: {res[0]} oraz {res[1]}";
+                ViewBag.Message = "Two results!";
+                ViewBag.Type = "tworesults";
             }
             else if (res.Count == 1)
             {
-                ViewBag.Message = $"Dla równania kwadratowego: {a}x^2 + ({b})x + ({c}) = 0." +
-                    $" istnieje jedno rozwiązanie: {res[0]}";
+                ViewBag.Message = "One result!";
+                ViewBag.Type = "oneresult";
             }
             else if (res.Count == 3)
             {
-                ViewBag.Message = $"Dla równania kwadratowego: {a}x^2 + ({b})x + ({c}) = 0." +
-                    "istnieje nieskonczenie wiele rozwiązan :";
-            }*/
+                ViewBag.Message = "Infinity results!";
+                ViewBag.Type = "toomanyresults";
+            }
+
             return View("Solve");
         }
 

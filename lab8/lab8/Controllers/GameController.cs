@@ -23,7 +23,7 @@ namespace lab8.Controllers
         {
             randValue = rnd.Next(0, n);
             roundCounter = 1;
-            ViewBag.Message = $"Generated rand value [0,{n - 1}]" + "guessing at /Guess,<n>";
+            ViewBag.Message = $"Generated rand value [0,{n - 1}] " + "guessing at /Guess,<n>";
             return View("Draw");
         }
         public IActionResult Guess(int guessedNumber)
@@ -31,18 +31,20 @@ namespace lab8.Controllers
             ViewBag.Choice = guessedNumber;
             if (guessedNumber == randValue)
             {
-                ViewBag.Message = "Start again at set or draw";
+                ViewBag.Message = "Correct!";
                 ViewBag.Round = roundCounter;
-                ViewBag.Clue = 0;
+                ViewBag.Clue = "correct";
             } 
             else if( guessedNumber > randValue)
             {
-                ViewBag.Clue = 1;
+                ViewBag.Message = "Too Big!";
+                ViewBag.Clue = "toobig";
                 ViewBag.Round = roundCounter++;
             } 
             else
             {
-                ViewBag.Clue = -1;
+                ViewBag.Message = "Too Low!";
+                ViewBag.Clue = "toolow";
                 ViewBag.Round = roundCounter++;
             }
             return View("Guess");
