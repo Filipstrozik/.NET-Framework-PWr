@@ -105,10 +105,34 @@ body {
     color: aqua;
 }
 
+    .toolow .imageclue {
+        background-image: url("https://www.ang.pl/img/slownik/small.jpg");
+        height: 200px;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }   
+
 .correct {
     color: greenyellow;
 }
 
+    .correct .imageclue {
+        background-image: url("https://www.pngmart.com/files/16/Correct-Green-Check-Mark-PNG-Pic.png");
+        width: 200px;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }      
+
 .toobig{
     color: red;
 }
+
+    .toobig .imageclue {
+        background-image: url("https://static.vecteezy.com/system/resources/previews/001/188/566/original/fire-png.png");
+        width: 200px;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }   

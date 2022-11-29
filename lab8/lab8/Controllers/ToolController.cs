@@ -17,9 +17,11 @@ namespace lab8.Controllers
         {
             List<double> res = SolveQuadraticEquation(a, b, c);
             ViewBag.a = a;
+            //ViewBag.Ats = $"{a}"; 
             ViewBag.b = b;
+            ViewBag.Bts = b >= 0 ? $"+{b}" : $"{b}";
             ViewBag.c = c;
-            ViewBag.dateNow = DateTime.Now;
+            ViewBag.Cts = c >= 0 ? $"+{c}" : $"{c}";
             ViewBag.resultList = res;
             ViewBag.title = "Solve Quadratic Equation";
             if (res.Count == 0)

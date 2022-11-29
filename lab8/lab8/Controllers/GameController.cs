@@ -12,10 +12,12 @@ namespace lab8.Controllers
         static int randValue = 0;
         static int roundCounter = 1;
         static Random rnd = new Random();
+        static List<int> history = new List<int>();
         public IActionResult Set(int setNumber)
         {
             n = setNumber;
-            ViewBag.Message = $"Set random range  from 0 to {setNumber - 1}" + "Go to /Draw to generate random value.";
+            ViewBag.Message = $"Set random range  from 0 to {setNumber - 1} " + "Go to /Draw to generate random value.";
+            history.Clear();
             return View("Set");
         }
 
@@ -24,10 +26,13 @@ namespace lab8.Controllers
             randValue = rnd.Next(0, n);
             roundCounter = 1;
             ViewBag.Message = $"Generated rand value [0,{n - 1}] " + "guessing at /Guess,<n>";
+            history.Clear();
             return View("Draw");
         }
         public IActionResult Guess(int guessedNumber)
         {
+            history.Add(guessedNumber);
+            ViewBag.History = history;
             ViewBag.Choice = guessedNumber;
             if (guessedNumber == randValue)
             {

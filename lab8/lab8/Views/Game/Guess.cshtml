@@ -6,7 +6,17 @@
 <body class=@ViewBag.Clue>
     <h1>Guessing Game</h1>
     <h2>Round: @ViewBag.Round</h2>
+    <h5>History:</h5>
+    <ul id="history">
+        @foreach (var his in ViewBag.History)
+        {
+            <li>
+                <p>@his</p>
+            </li>
+        }
+    </ul>
     <h2>Result: @ViewBag.Message</h2>
+    <div class="imageclue"></div>
 </body>
 
 
