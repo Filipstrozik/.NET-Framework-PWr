@@ -16,7 +16,16 @@ namespace Lab9.ArticlesContext
 
         public void AddArticle(Article article)
         {
-            int nextId = map.Keys.Max(k => k) + 1;
+
+            int nextId;
+            if (map.Count() == 0)
+            {
+                nextId = 0;
+            }
+            else
+            {
+                nextId = map.Keys.Max(k => k) + 1;
+            }
             article.Id = nextId;
             map.Add(nextId, article);
         }

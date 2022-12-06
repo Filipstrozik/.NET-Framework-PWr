@@ -15,9 +15,16 @@ namespace Lab9.ArticlesContext
             };
 
 
-        public void AddArticle(Article article)
+        public void AddArticle(Article article)  
         {
-            int nextId = articlesList.Max(a => a.Id) + 1;
+            int nextId;
+            if (articlesList.Count() == 0)
+            {
+                nextId = 0;
+            } else
+            {
+                nextId = articlesList.Max(a => a.Id) + 1;
+            }
             article.Id = nextId;
             articlesList.Add(article);
         }
