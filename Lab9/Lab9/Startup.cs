@@ -29,7 +29,7 @@ namespace Lab9
             services.AddSingleton<IArticlesContext, MapArticlesContext>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Ts method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
