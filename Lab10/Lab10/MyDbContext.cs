@@ -20,6 +20,7 @@ namespace Lab10
             modelBuilder.Entity<Category>()
                 .HasMany(c => c.Articles)
                 .WithOne(a => a.Category)
+                .OnDelete(DeleteBehavior.SetNull)
                 .HasForeignKey(c => c.CategoryId);
 
             modelBuilder.Entity<Article>()

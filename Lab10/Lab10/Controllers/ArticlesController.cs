@@ -7,17 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lab10;
 using Lab10.Models;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace Lab10.Controllers
 {
     public class ArticlesController : Controller
     {
         private readonly MyDbContext _context;
-
-        public ArticlesController(MyDbContext context)
+        private readonly IHostingEnvironment _hostingEnvironment;
+     
+        public ArticlesController(MyDbContext context, IHostingEnvironment hostingEnvironment)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
         }
+
+
 
         // GET: Articles
         public async Task<IActionResult> Index()
@@ -57,10 +63,22 @@ namespace Lab10.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,Image,CategoryId")] Article article)
+        public async Task<IActionResult> Create([Bind("Id,Name,Price,FormFile,CategoryId")] Article article)
         {
             if (ModelState.IsValid)
             {
+                string uniqueFileName = null;
+                if(article.FormFile != null)
+                {
+                    string uploadFolder =  Path.Combine(_hostingEnvironment.WebRootPath, "upload");
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + article.FormFile.FileName;
+                    string filePath = Path.Combine(uploadFolder, uniqueFileName);
+                    FileStream p = new FileStream(filePath, FileMode.Create);
+                    article.FormFile.CopyTo(p);
+                    p.Dispose();
+                    article.filePath = uniqueFileName;
+                    Console.WriteLine(article.filePath);
+                }
                 _context.Add(article);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -91,7 +109,7 @@ namespace Lab10.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Image,CategoryId")] Article article)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,filePath,CategoryId")] Article article)
         {
             if (id != article.Id)
             {
@@ -146,7 +164,21 @@ namespace Lab10.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+
             var article = await _context.Articles.FindAsync(id);
+            string uploadFolder = Path.Combine(_hostingEnvironment.WebRootPath, "upload");
+            string filePath = Path.Combine(uploadFolder, article.filePath);
+            article.FormFile = null;
+            article.filePath = null;
+            if (System.IO.File.Exists(filePath))
+            {
+                FileInfo fi = new FileInfo(filePath);
+                if(fi != null)
+                {
+                    System.IO.File.Delete(filePath);
+                    fi.Delete();
+                }
+            }
             _context.Articles.Remove(article);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

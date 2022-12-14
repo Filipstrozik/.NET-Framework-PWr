@@ -2,6 +2,9 @@
 
 @{
     ViewData["Title"] = "Delete";
+    var dir = "/upload/";
+    var photoPath = Model.filePath ?? "NoImage.jpg";
+    var path = dir + photoPath;
 }
 
 <h1>Delete</h1>
@@ -24,18 +27,14 @@
             @Html.DisplayFor(model => model.Price)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Category)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Category.Name)
         </dd class>
     </dl>
+    <img src="@path"/>
+    <p>@Model.filePath</p>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
