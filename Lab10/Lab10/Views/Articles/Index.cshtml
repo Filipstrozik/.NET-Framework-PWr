@@ -31,7 +31,7 @@
 @foreach (var item in Model) {
     var dir = "/upload/";
     var photoPath = item.filePath ?? "NoImage.jpg";
-    var path = dir + photoPath;
+    var path = item.filePath != null ? dir + photoPath : "/image/" + photoPath;
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)

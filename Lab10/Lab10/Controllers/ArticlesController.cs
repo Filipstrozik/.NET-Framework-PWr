@@ -166,17 +166,20 @@ namespace Lab10.Controllers
         {
 
             var article = await _context.Articles.FindAsync(id);
-            string uploadFolder = Path.Combine(_hostingEnvironment.WebRootPath, "upload");
-            string filePath = Path.Combine(uploadFolder, article.filePath);
-            article.FormFile = null;
-            article.filePath = null;
-            if (System.IO.File.Exists(filePath))
+            if(article.filePath != null) 
             {
-                FileInfo fi = new FileInfo(filePath);
-                if(fi != null)
+                string uploadFolder = Path.Combine(_hostingEnvironment.WebRootPath, "upload");
+                string filePath = Path.Combine(uploadFolder, article.filePath);
+                article.FormFile = null;
+                article.filePath = null;
+                if (System.IO.File.Exists(filePath))
                 {
-                    System.IO.File.Delete(filePath);
-                    fi.Delete();
+                    FileInfo fi = new FileInfo(filePath);
+                    if (fi != null)
+                    {
+                        System.IO.File.Delete(filePath);
+                        fi.Delete();
+                    }
                 }
             }
             _context.Articles.Remove(article);

@@ -1,0 +1,17 @@
+﻿@model Lab10.Models.Category
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Shop index</h1>
+
+<form asp-action="IndexList">
+    <div class="form-group">
+        <label asp-for="Id" class="control-label"></label>
+        <select asp-for="Id" class="form-control" asp-items="ViewBag.CategoryId"></select>
+        <span asp-validation-for="Id" class="text-danger"></span>
+        <input type="submit" value="Show Articles" class="btn btn-primary" />
+    </div>
+</form>
+
