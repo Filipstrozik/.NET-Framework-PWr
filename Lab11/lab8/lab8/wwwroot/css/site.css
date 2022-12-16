@@ -1,0 +1,138 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.noresults {
+    background-color: red;
+}
+
+.noresults h2 {
+    font-size: 100px;
+}
+
+.toomanyresults {
+    background-color: pink;
+}
+
+.tworesults {
+    background-color: green;
+}
+
+.tworesults h1 {
+    font-size: 100px;
+    color: orangered;
+}
+
+.oneresult {
+    background-color: cornflowerblue;
+}
+
+.oneresult h1 {
+    font-size: 50px;
+    color: rebeccapurple;
+}
+
+.toolow {
+    color: aqua;
+}
+
+    .toolow .imageclue {
+        background-image: url("https://www.ang.pl/img/slownik/small.jpg");
+        height: 200px;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }   
+
+.correct {
+    color: greenyellow;
+}
+
+    .correct .imageclue {
+        background-image: url("https://www.pngmart.com/files/16/Correct-Green-Check-Mark-PNG-Pic.png");
+        width: 200px;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }      
+
+.toobig{
+    color: red;
+}
+
+    .toobig .imageclue {
+        background-image: url("https://static.vecteezy.com/system/resources/previews/001/188/566/original/fire-png.png");
+        width: 200px;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }   

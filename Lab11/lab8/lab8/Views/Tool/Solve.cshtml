@@ -1,0 +1,40 @@
+﻿@*
+    ViewData["Title"] = "Solve";
+*@
+
+@{ var list = ViewBag.resultList;
+    var len = list.Count; }
+
+
+
+<body class=@ViewBag.type>
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message</h2>
+    <h2>@ViewBag.a x&#x00B2; @ViewBag.Bts x @ViewBag.Cts = 0</h2>
+
+    My parameters:
+    <br />
+    <b> a: @ViewBag.a</b>
+    <br />
+    <b> b: @ViewBag.b</b>
+    <br />
+    <b> c: @ViewBag.c</b>
+    <br />
+    <ul id="results">
+        @if (len == 1 || len == 2)
+        {
+            @foreach (var result in ViewBag.resultList)
+            {
+                <li>
+                    <h1>@result</h1>
+                </li>
+            }
+        }
+    </ul>
+</body>
+
+
+
+
+
+
