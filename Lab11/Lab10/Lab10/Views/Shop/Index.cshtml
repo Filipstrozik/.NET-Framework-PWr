@@ -44,7 +44,7 @@
                     @Html.DisplayNameFor(model => model.Price)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.filePath)
+                    @Html.DisplayNameFor(model => model.Photo)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Category)
@@ -63,7 +63,7 @@
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
-                        <img src="~/@item.filePath" style="width: 10%; height: 10%; object-fit: contain;">
+                        <img class="img-thumbnail my-thumbnail" src="@Html.DisplayFor(modelItem => item.Photo)" />
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Category.Name)

@@ -1,4 +1,4 @@
-﻿@model Lab10.Models.Article
+﻿@model Lab10.ViewModels.ArticleCreateViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -23,7 +23,7 @@
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group row">
-                <label asp-for="FormFile" class="col-form-label"></label>
+                <label asp-for="FormFile" class="col-form-label">Photo</label>
                 <div class="col-sm-10">
                     <div class="custom-file">
                         <input asp-for="FormFile" class="form-control custom-file-input" onchange="previewFile(event)" />
@@ -33,7 +33,7 @@
                 <img id="preview" />
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
+                <label asp-for="CategoryId" class="control-label">Category</label>
                 <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
             </div>
             <div class="form-group">

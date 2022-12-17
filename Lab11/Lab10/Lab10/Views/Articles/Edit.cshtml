@@ -2,9 +2,6 @@
 
 @{
     ViewData["Title"] = "Edit";
-    var dir = "/upload/";
-    var photoPath = Model.filePath ?? "NoImage.jpg";
-    var path = Model.filePath != null ? dir + photoPath : "/image/" + photoPath;
 }
 
 <h1>Edit</h1>
@@ -36,7 +33,7 @@
                 <label asp-for="filePath" class="control-label"></label>
                 <input hidden asp-for="filePath" class="form-control"/>
             </div>
-            <img src="@path" />
+            <img src="@Html.DisplayFor(model => model.Photo)" />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

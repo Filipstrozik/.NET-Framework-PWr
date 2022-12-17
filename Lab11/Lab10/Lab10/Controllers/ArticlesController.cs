@@ -9,6 +9,7 @@ using Lab10;
 using Lab10.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Lab10.ViewModels;
 
 namespace Lab10.Controllers
 {
@@ -63,28 +64,35 @@ namespace Lab10.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,FormFile,CategoryId")] Article article)
+        public async Task<IActionResult> Create([Bind("Id,Name,Price,CategoryId,FormFile")] ArticleCreateViewModel articleView)
         {
             if (ModelState.IsValid)
             {
                 string uniqueFileName = null;
-                if(article.FormFile != null)
+                if(articleView.FormFile != null)
                 {
                     string uploadFolder =  Path.Combine(_hostingEnvironment.WebRootPath, "upload");
-                    uniqueFileName = Guid.NewGuid().ToString() + "_" + article.FormFile.FileName;
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + articleView.FormFile.FileName;
                     string filePath = Path.Combine(uploadFolder, uniqueFileName);
                     FileStream p = new FileStream(filePath, FileMode.Create);
-                    article.FormFile.CopyTo(p);
+                    articleView.FormFile.CopyTo(p);
                     p.Dispose();
-                    article.filePath = uniqueFileName;
-                    Console.WriteLine(article.filePath);
                 }
+
+                var article = new Article
+                {
+                    Name = articleView.Name,
+                    Price = articleView.Price,
+                    CategoryId = articleView.CategoryId,
+                    filePath = uniqueFileName
+                };
+
                 _context.Add(article);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", article.CategoryId);
-            return View(article);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", articleView.CategoryId);
+            return View(articleView);
         }
 
         // GET: Articles/Edit/5
@@ -170,7 +178,6 @@ namespace Lab10.Controllers
             {
                 string uploadFolder = Path.Combine(_hostingEnvironment.WebRootPath, "upload");
                 string filePath = Path.Combine(uploadFolder, article.filePath);
-                article.FormFile = null;
                 article.filePath = null;
                 if (System.IO.File.Exists(filePath))
                 {
