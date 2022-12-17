@@ -26,7 +26,7 @@ namespace Lab10
         {
             services.AddControllersWithViews();
             services.AddDbContextPool<MyDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MyDb")));
+                options.UseSqlServer(Configuration.GetConnectionString("Lista10")));
 
         }
 

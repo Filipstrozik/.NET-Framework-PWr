@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MCqRZIuw71Ic3bEvz79JXgBrN3/7eYWAFlORx0ZCKv8ryRijf9h3+pfkoehLtITC6Pk4V1F/E4VBS0YBYnxN2Q==",
+  "dgSpecHash": "d2BOu+vkloc2K4wr8G72iNMJyA61A/G/VJdUSvjbvkLuD0VeIjg4wee4gseNQFXyo3NVaQ5tu4JEDWKCuVpuiA==",
   "success": true,
-  "projectFilePath": "D:\\MAIN\\CODING\\Sem5\\NET Framework\\Lab10\\Lab10\\Lab10.csproj",
+  "projectFilePath": "D:\\MAIN\\CODING\\Sem5\\NET Framework\\Lab11\\Lab10\\Lab10\\Lab10.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Filip Strózik\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Filip Strózik\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

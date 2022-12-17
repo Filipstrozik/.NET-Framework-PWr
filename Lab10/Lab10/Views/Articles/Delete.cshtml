@@ -2,9 +2,6 @@
 
 @{
     ViewData["Title"] = "Delete";
-    var dir = "/upload/";
-    var photoPath = Model.filePath ?? "NoImage.jpg";
-    var path = Model.filePath != null ? dir + photoPath : "/image/" + photoPath;
 }
 
 <h1>Delete</h1>
@@ -33,7 +30,7 @@
             @Html.DisplayFor(model => model.Category.Name)
         </dd class>
     </dl>
-    <img src="@path"/>
+    <img src="@Html.DisplayFor(model => model.Photo)"/>
     <p>@Model.filePath</p>
     
     <form asp-action="Delete">

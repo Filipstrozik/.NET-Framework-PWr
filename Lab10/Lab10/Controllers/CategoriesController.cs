@@ -140,6 +140,18 @@ namespace Lab10.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var category = await _context.Categories.FindAsync(id);
+            var articleCount = await _context.Articles
+                .Where(a => a.CategoryId == id)
+                .CountAsync();
+
+            if(articleCount > 0)
+            {
+                ModelState.AddModelError(
+                    string.Empty,
+                    $"Cannot delete category that has {articleCount} articles related. You can only delete article with no articles."
+                    );
+                return View(category);
+            }
             _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
