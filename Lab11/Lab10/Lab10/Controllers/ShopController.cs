@@ -85,7 +85,7 @@ namespace Lab10.Controllers
         public async Task<IActionResult> Cart()
         {
             _cart = GetCart();
-            ViewBag.Total = GetTotal();
+            ViewBag.Total = GetTotalAsync();
             List<CartItemViewModel> basketList = new List<CartItemViewModel>();
 
             var keys = _cart.Keys.ToList();
@@ -105,19 +105,25 @@ namespace Lab10.Controllers
         }
 
 
-        public decimal GetTotal()
+        public decimal GetTotalAsync()
         {
             _cart = GetCart();
-            decimal? total = decimal.Zero;
+            decimal? total = 0;
             if (_cart == null)
             {
                 return decimal.Zero;
             }
+
+            var keys = _cart.Keys.ToList();
+            var articles =  _context.Articles.ToList();
             foreach (KeyValuePair<int, CartItemViewModel> item in _cart)
             {
-                total += (decimal?)item.Value.Article.Price * item.Value.Quantity;
+                if(articles.Where(a => a.Id == item.Value.ArticleId).Count() > 0)
+                {
+                    total += (decimal?)item.Value.Article.Price * item.Value.Quantity;
+                }
             }
-            return total ?? decimal.Zero;
+            return (decimal)total;
         }
 
         [HttpPost]

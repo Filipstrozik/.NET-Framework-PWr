@@ -41,7 +41,7 @@
                         @Html.DisplayFor(modelItem => item.Article.Price)
                     </td>
                     <td style="text-align: center">
-                        <img src="~/@item.Article.filePath" style="width: 10%; height: 10%; object-fit: contain;">
+                        <img class="img-thumbnail my-thumbnail" src="@Html.DisplayFor(modelItem => item.Article.Photo)" />
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Article.Category.Name)
