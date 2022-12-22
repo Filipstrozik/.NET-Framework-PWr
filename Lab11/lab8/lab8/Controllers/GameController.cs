@@ -10,7 +10,7 @@ namespace lab8.Controllers
     public class GameController : Controller
     {
 
-        private int randValue = 0;
+        //private int randValue = 0; // trzymac w sesji
         static Random rnd = new Random();
 
         public IActionResult Set(int setNumber)
@@ -23,7 +23,7 @@ namespace lab8.Controllers
 
         public IActionResult Draw()
         {
-            randValue = rnd.Next(0, (int)HttpContext.Session.GetInt32("n"));
+            int randValue = rnd.Next(0, (int)HttpContext.Session.GetInt32("n"));
             HttpContext.Session.SetInt32("randValue", randValue);
             HttpContext.Session.SetInt32("counter", 0);
             ViewBag.Message = $"Generated rand value [0,{(int)HttpContext.Session.GetInt32("n") - 1}] " + "guessing at /Guess,<n>";
@@ -34,7 +34,7 @@ namespace lab8.Controllers
         public IActionResult Guess(int guessedNumber)
         {
             ViewBag.Choice = guessedNumber;
-            randValue = (int)HttpContext.Session.GetInt32("randValue");
+            int randValue = (int)HttpContext.Session.GetInt32("randValue");
 
             string historyOfGuesses = HttpContext.Session.GetString("history");
             historyOfGuesses = historyOfGuesses + " " + guessedNumber;

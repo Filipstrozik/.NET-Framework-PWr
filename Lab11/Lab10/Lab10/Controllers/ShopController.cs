@@ -16,7 +16,7 @@ namespace Lab10.Controllers
     {
 
         private readonly MyDbContext _context;
-        private Dictionary<int, CartItemViewModel> _cart;
+        private Dictionary<int, CartItemViewModel> _cart;//inteferjs i zmiana implementacji w przyszlosci
 
         private const int EXPIRATION = 7;
         public ShopController(MyDbContext context)
@@ -113,7 +113,7 @@ namespace Lab10.Controllers
             {
                 return decimal.Zero;
             }
-
+            //mozna lepiej, czyli w momencie pobierania koszka sprawdzaj czy w slowniku moga wystepowac artykuly (bo moga byc usuniete)
             var keys = _cart.Keys.ToList();
             var articles =  _context.Articles.ToList();
             foreach (KeyValuePair<int, CartItemViewModel> item in _cart)
