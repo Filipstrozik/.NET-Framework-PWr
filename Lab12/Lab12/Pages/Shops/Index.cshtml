@@ -1,0 +1,78 @@
+﻿@page
+@model Lab12.Pages.Shops.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<section class="left" width: 30%;>
+    <ul>
+        @if (@ViewBag.Current != null)
+        {
+            <li class="normal"><a asp-action="Index"><b>All categories</b></a></li>
+        }
+        else
+        {
+            <li class="current"><a asp-action="Index"><b>All categories</b></a></li>
+        }
+        @foreach (var item in ViewBag.Categories)
+        {
+            @if (item.Id == ViewBag.Current)
+            {
+                <li class="current"><a asp-action="IndexList" asp-route-id="@item.Id"><b>@item.Name</b></a></li>
+            }
+            else
+            {
+                <li class="normal"><a asp-action="IndexList" asp-route-id="@item.Id"><b>@item.Name</b></a></li>
+            }
+        }
+    </ul>
+</section>
+
+<section class="right" width: 60%;>
+    <h1>Shop</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Photo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Category)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Article)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <img class="img-thumbnail my-thumbnail" src="@Html.DisplayFor(modelItem => item.Photo)" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td>
+                        <a asp-page="/Articles/Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="/Articles/Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="/Articles/Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
